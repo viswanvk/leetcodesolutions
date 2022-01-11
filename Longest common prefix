@@ -1,0 +1,39 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        StringBuilder result = new StringBuilder();
+        // sort arrays so that we can compare only first and last words
+        Arrays.sort(strs);
+            
+            char [] firstword = strs[0].toCharArray();
+            char [] lastword = strs[strs.length -1].toCharArray();
+         // code based on the lenth of strs
+         if(strs.length == 0)
+         {
+             result = null;
+         }
+        // if only one word is present then print the entire word in result
+         else if(strs.length == 1)
+         {     int count1 = 0;
+              while(count1<firstword.length)
+             {
+                     result.append(firstword[count1]);
+                     count1++;
+             }
+         }
+         else{
+             int count = 0;
+             while(count<firstword.length)
+             {
+                 if(lastword[0] == firstword[0])
+                 {
+                     if(lastword[count] == firstword[count]){
+                         result.append(firstword[count]);}
+                     else
+                         break;
+                 }
+                 count++;
+             }
+         }
+        return result.toString();
+    } 
+}
