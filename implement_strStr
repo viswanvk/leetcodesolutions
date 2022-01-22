@@ -1,0 +1,13 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+    int result = 0;
+        if(needle  =="")
+        {
+            result = 0;
+        }
+        else{
+            result = haystack.indexOf(needle);
+        }
+        return result;
+    }
+}
