@@ -1,0 +1,14 @@
+class Solution {
+    public int climbStairs(int n) {
+        int[] noOfWays = new int[n+1];
+        // The ways to climb 0 or 1 steps is always 1;
+        noOfWays[0] = 1;
+        noOfWays[1] = 1;
+        // calculating ways to climb n steps
+        for(int i=2;i<n+1;i++)
+        {
+            noOfWays[i] = noOfWays[i-1] + noOfWays[i-2];
+        }
+        return noOfWays[n];
+    }
+}
