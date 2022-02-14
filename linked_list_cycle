@@ -1,0 +1,36 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+
+// Having two nodes fast and slow - if there is a loop at some point fast will be equal to slow
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+       
+    if(head == null)
+        return false;
+        
+        ListNode slow_node = head;
+        ListNode fast_node = head.next;
+        
+        while(slow_node!=fast_node)
+        {
+            if(fast_node == null || fast_node.next == null)
+            {
+                return false;
+            }
+            
+            slow_node = slow_node.next;
+            fast_node = fast_node.next.next;
+        }
+        
+        return true;
+    }
+}
