@@ -1,0 +1,19 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        // Since we directly have access to the same node, we cannot change the pointer of theprevious node. So we just copy the next node to current node and delete the next node.
+        ListNode head = node;
+        head.val = head.next.val;
+        head.next = head.next.next;
+        
+        
+    }
+    
+}
